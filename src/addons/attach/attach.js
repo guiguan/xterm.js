@@ -1,6 +1,6 @@
 /**
  * @Last modified by:   guiguan
- * @Last modified time: 2017-11-09T15:02:48+11:00
+ * @Last modified time: 2017-11-10T01:27:34+11:00
  */
 
 /**
@@ -15,7 +15,7 @@
     /*
      * CommonJS environment
      */
-    module.exports = attach(require('../../Terminal').Terminal);
+    module.exports = attach(require('../../xterm'));
   } else if (typeof define == 'function') {
     /*
      * Require.js is available

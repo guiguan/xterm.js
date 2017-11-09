@@ -1,4 +1,9 @@
 /**
+ * @Last modified by:   guiguan
+ * @Last modified time: 2017-11-10T01:28:04+11:00
+ */
+
+/**
  * Copyright (c) 2014 The xterm.js authors. All rights reserved.
  * @license MIT
  *
@@ -18,7 +23,7 @@
     /*
      * CommonJS environment
      */
-    module.exports = fit(require('../../Terminal').Terminal);
+    module.exports = fit(require('../../xterm'));
   } else if (typeof define == 'function') {
     /*
      * Require.js is available

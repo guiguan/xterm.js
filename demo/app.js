@@ -1,3 +1,8 @@
+/**
+ * @Last modified by:   guiguan
+ * @Last modified time: 2017-11-10T02:04:46+11:00
+ */
+
 var express = require('express');
 var app = express();
 var expressWs = require('express-ws')(app);
@@ -8,6 +13,12 @@ var terminals = {},
     logs = {};
 
 app.use('/build', express.static(__dirname + '/../build'));
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
