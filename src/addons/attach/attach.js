@@ -1,4 +1,9 @@
 /**
+ * @Last modified by:   guiguan
+ * @Last modified time: 2017-11-09T15:02:48+11:00
+ */
+
+/**
  * Copyright (c) 2014 The xterm.js authors. All rights reserved.
  * @license MIT
  *
@@ -60,6 +65,7 @@
 
     term._getMessage = function (ev) {
       var str;
+
       if (typeof ev.data === "object") {
         if (ev.data instanceof ArrayBuffer) {
             if (!myTextDecoder) {
@@ -73,6 +79,8 @@
         }
       }
 
+      console.log("Receiving: ", JSON.stringify(ev), JSON.stringify(ev.data));
+
       if (buffered) {
         term._pushToBuffer(str || ev.data);
       } else {
@@ -81,6 +89,7 @@
     };
 
     term._sendData = function (data) {
+      console.log('Sending: ', JSON.stringify(data));
       socket.send(data);
     };
 
