@@ -1,6 +1,6 @@
 /**
  * @Last modified by:   guiguan
- * @Last modified time: 2017-11-13T15:51:20+11:00
+ * @Last modified time: 2017-11-14T10:17:45+11:00
  */
 
 /**
@@ -36,7 +36,7 @@
 //     fit(window.Terminal);
 //   }
 // })(function (Terminal) {
-module.exports = (Terminal) => {
+module.exports = function (Terminal) {
   var exports = {};
 
   exports.proposeGeometry = function (term) {

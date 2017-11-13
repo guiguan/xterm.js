@@ -1,6 +1,6 @@
 /**
  * @Last modified by:   guiguan
- * @Last modified time: 2017-11-13T15:52:30+11:00
+ * @Last modified time: 2017-11-14T10:17:36+11:00
  */
 
 /**
@@ -28,7 +28,7 @@
 //     attach(window.Terminal);
 //   }
 // })(function (Terminal) {
-module.exports = (Terminal) => {
+module.exports = function (Terminal) {
   'use strict';
 
   var exports = {};
