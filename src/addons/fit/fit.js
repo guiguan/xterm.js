@@ -1,6 +1,6 @@
 /**
  * @Last modified by:   guiguan
- * @Last modified time: 2017-11-10T01:28:04+11:00
+ * @Last modified time: 2017-11-13T15:51:20+11:00
  */
 
 /**
@@ -18,24 +18,25 @@
  *          row and truncate its width with the current number of columns).
  */
 
-(function (fit) {
-  if (typeof exports === 'object' && typeof module === 'object') {
-    /*
-     * CommonJS environment
-     */
-    module.exports = fit(require('../../xterm'));
-  } else if (typeof define == 'function') {
-    /*
-     * Require.js is available
-     */
-    define(['../../xterm'], fit);
-  } else {
-    /*
-     * Plain browser environment
-     */
-    fit(window.Terminal);
-  }
-})(function (Terminal) {
+// (function (fit) {
+//   if (typeof exports === 'object' && typeof module === 'object') {
+//     /*
+//      * CommonJS environment
+//      */
+//     module.exports = fit(require('../../Terminal').Terminal);
+//   } else if (typeof define == 'function') {
+//     /*
+//      * Require.js is available
+//      */
+//     define(['../../xterm'], fit);
+//   } else {
+//     /*
+//      * Plain browser environment
+//      */
+//     fit(window.Terminal);
+//   }
+// })(function (Terminal) {
+module.exports = (Terminal) => {
   var exports = {};
 
   exports.proposeGeometry = function (term) {
@@ -83,4 +84,5 @@
   };
 
   return exports;
-});
+};
+// });

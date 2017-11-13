@@ -1,34 +1,40 @@
 /**
+ * @Last modified by:   guiguan
+ * @Last modified time: 2017-11-13T15:42:08+11:00
+ */
+
+/**
  * Copyright (c) 2017 The xterm.js authors. All rights reserved.
  * @license MIT
  */
 
 import { SearchHelper } from './SearchHelper';
 
-declare var exports: any;
-declare var module: any;
-declare var define: any;
-declare var require: any;
-declare var window: any;
+// declare var exports: any;
+// declare var module: any;
+// declare var define: any;
+// declare var require: any;
+// declare var window: any;
 
-(function (addon) {
-  if (typeof window !== 'undefined' && 'Terminal' in window) {
-    /**
-     * Plain browser environment
-     */
-    addon(window.Terminal);
-  } else if (typeof exports === 'object' && typeof module === 'object') {
-    /**
-     * CommonJS environment
-     */
-    module.exports = addon(require('../../Terminal').Terminal);
-  } else if (typeof define === 'function') {
-    /**
-     * Require.js is available
-     */
-    define(['../../xterm'], addon);
-  }
-})((Terminal: any) => {
+// (function (addon) {
+//   if (typeof window !== 'undefined' && 'Terminal' in window) {
+//     /**
+//      * Plain browser environment
+//      */
+//     addon(window.Terminal);
+//   } else if (typeof exports === 'object' && typeof module === 'object') {
+//     /**
+//      * CommonJS environment
+//      */
+//     module.exports = addon(require('../../Terminal').Terminal);
+//   } else if (typeof define === 'function') {
+//     /**
+//      * Require.js is available
+//      */
+//     define(['../../xterm'], addon);
+//   }
+// })((Terminal: any) => {
+export default (Terminal: any) => {
   /**
    * Find the next instance of the term, then scroll to and select it. If it
    * doesn't exist, do nothing.
@@ -54,4 +60,5 @@ declare var window: any;
     }
     return (<SearchHelper>this.searchHelper).findPrevious(term);
   };
-});
+};
+// });

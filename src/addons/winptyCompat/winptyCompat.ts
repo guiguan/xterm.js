@@ -1,4 +1,9 @@
 /**
+ * @Last modified by:   guiguan
+ * @Last modified time: 2017-11-13T15:59:01+11:00
+ */
+
+/**
  * Copyright (c) 2017 The xterm.js authors. All rights reserved.
  * @license MIT
  */
@@ -6,24 +11,25 @@
 declare var exports: any;
 declare var define: any;
 
-(function (addon) {
-  if (typeof window !== 'undefined' && 'Terminal' in window) {
-    /**
-     * Plain browser environment
-     */
-    addon((<any>window).Terminal);
-  } else if (typeof exports === 'object' && typeof module === 'object') {
-    /**
-     * CommonJS environment
-     */
-    module.exports = addon(require('../../Terminal').Terminal);
-  } else if (typeof define === 'function') {
-    /**
-     * Require.js is available
-     */
-    define(['../../xterm'], addon);
-  }
-})((Terminal: any) => {
+// (function (addon) {
+//   if (typeof window !== 'undefined' && 'Terminal' in window) {
+//     /**
+//      * Plain browser environment
+//      */
+//     addon((<any>window).Terminal);
+//   } else if (typeof exports === 'object' && typeof module === 'object') {
+//     /**
+//      * CommonJS environment
+//      */
+//     module.exports = addon(require('../../Terminal').Terminal);
+//   } else if (typeof define === 'function') {
+//     /**
+//      * Require.js is available
+//      */
+//     define(['../../xterm'], addon);
+//   }
+// })((Terminal: any) => {
+export default (Terminal: any) => {
   Terminal.prototype.winptyCompatInit = function(): void {
     // Don't do anything when the platform is not Windows
     const isWindows = ['Windows', 'Win16', 'Win32', 'WinCE'].indexOf(navigator.platform) >= 0;
@@ -50,4 +56,5 @@ declare var define: any;
       }
     });
   };
-});
+};
+// });

@@ -1,6 +1,6 @@
 /**
  * @Last modified by:   guiguan
- * @Last modified time: 2017-11-10T01:27:34+11:00
+ * @Last modified time: 2017-11-13T15:52:30+11:00
  */
 
 /**
@@ -10,24 +10,25 @@
  * Implements the attach method, that attaches the terminal to a WebSocket stream.
  */
 
-(function (attach) {
-  if (typeof exports === 'object' && typeof module === 'object') {
-    /*
-     * CommonJS environment
-     */
-    module.exports = attach(require('../../xterm'));
-  } else if (typeof define == 'function') {
-    /*
-     * Require.js is available
-     */
-    define(['../../xterm'], attach);
-  } else {
-    /*
-     * Plain browser environment
-     */
-    attach(window.Terminal);
-  }
-})(function (Terminal) {
+// (function (attach) {
+//   if (typeof exports === 'object' && typeof module === 'object') {
+//     /*
+//      * CommonJS environment
+//      */
+//     module.exports = attach(require('../../Terminal').Terminal);
+//   } else if (typeof define == 'function') {
+//     /*
+//      * Require.js is available
+//      */
+//     define(['../../xterm'], attach);
+//   } else {
+//     /*
+//      * Plain browser environment
+//      */
+//     attach(window.Terminal);
+//   }
+// })(function (Terminal) {
+module.exports = (Terminal) => {
   'use strict';
 
   var exports = {};
@@ -79,7 +80,7 @@
         }
       }
 
-      console.log("Receiving: ", JSON.stringify(ev), JSON.stringify(ev.data));
+      console.log('Receiving: ', JSON.stringify(ev), JSON.stringify(ev.data));
 
       if (buffered) {
         term._pushToBuffer(str || ev.data);
@@ -147,4 +148,5 @@
   };
 
   return exports;
-});
+};
+// });
